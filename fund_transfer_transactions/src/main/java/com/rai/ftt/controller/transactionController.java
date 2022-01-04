@@ -41,9 +41,8 @@ public class transactionController {
 		
 //		Query query = new Query();
 //		query.addCriteria(Criteria.where(trasactionId).is(trasactionId));
-		
-		
-		return ResponseEntity.ok(transService.getOneTrans(transactionId));
+		transaction trans = transService.getOneTrans(transactionId);
+		return new ResponseEntity<transaction>( trans , HttpStatus.OK);
 		
 	    }
 	

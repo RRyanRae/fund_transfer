@@ -12,8 +12,8 @@ import com.rai.ftt.model.transaction;
 @Repository
 public interface transactionRepository extends MongoRepository<transaction, String> {
 	
-	@Query("{'transactionId: ?0}")
-	Optional<transaction> findBytransactionId(String transactionId);
+	@Query(value="{transactionId: ?0}")
+	transaction findBytransactionId(String transactionId);
 
 }
  
