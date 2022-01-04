@@ -27,7 +27,9 @@ public class transactionService {
 	}
 	
 	public transaction getOneTrans(String transactionId) {
-		return transactionrepo.findBytransactionId(transactionId).orElseThrow(() -> new RuntimeException(
-				String.format(transactionId, "Transaction not found!")));
+		return transactionrepo.findBytransactionId(transactionId);
+				
+//				.orElseThrow(() -> new RuntimeException(
+//				String.format(transactionId, "Transaction not found!")));
 	}
 }
