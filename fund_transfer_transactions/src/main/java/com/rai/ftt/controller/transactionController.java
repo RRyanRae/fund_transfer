@@ -41,9 +41,12 @@ public class transactionController {
 		
 //		Query query = new Query();
 //		query.addCriteria(Criteria.where(trasactionId).is(trasactionId));
+		try {
 		transaction trans = transService.getOneTrans(transactionId);
 		return new ResponseEntity<transaction>( trans , HttpStatus.OK);
-		
+		}catch (Exception e) {
+			return new ResponseEntity("Transaction Not found!" , HttpStatus.NOT_FOUND);	
+		}
 	    }
 	
 
